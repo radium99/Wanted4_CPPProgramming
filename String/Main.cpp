@@ -1,4 +1,8 @@
 ﻿#include <iostream>
+#include <Windows.h>
+
+#define MYTEXT(value) L##value
+#define MYTEST(value1, value2) value1##value2
 //#include <string>
 class Player {
 	// public/protected/private
@@ -33,7 +37,7 @@ class Player {
 private:
 		// 문자열을 저장할 변수.
 		char* name = nullptr;
-
+		
 };
 int main() {
 	//문자열.
@@ -47,5 +51,11 @@ int main() {
 	// 객체 기반으로 문자열 사용.
 	Player player("RonnieJ");
 
+	//wide-character
+	//const wchar_t* wideString = L"Hello wide string";
+	const wchar_t* wideString = MYTEXT("Hello wide string");
+
+	std::wcout<< wideString << TEXT("/n");
+	//auto test = MYTEST(10, 20);
 	std::cin.get();
 }
