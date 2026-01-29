@@ -1,13 +1,5 @@
-#include<iostream>
 #include "Player.h"
-
-Player::Player()
-{
-}
-Player::~Player()
-{
-}
-
+#include<iostream>
 int main() {
 	//인스턴스
 	Player player1;
